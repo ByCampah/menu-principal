@@ -27,7 +27,7 @@ body {
     margin-bottom: 40px;
 }
 .logo-m {
-    height: 70px !important; /* Forzamos tamaño máximo para el GIF */
+    height: 130px !important; /* Forzamos tamaño máximo para el GIF */
     width: auto !important;
     margin-bottom: 15px;
     filter: drop-shadow(0 0 10px rgba(255, 120, 0, 0.6));
