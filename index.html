@@ -1,56 +1,105 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miau Games - Hub Espacial</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="img/caragato.png">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3597205269278004" crossorigin="anonymous"></script>
-</head>
-<body>
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 
-    <div class="contenedor-hub">
-        
-        <header class="cabecera-logos">
-            <img src="img/logo.gif" alt="Logo Miau" class="logo-m">
-            
-            <div class="titulo-y-cara">
-                <img src="img/caragato.png" alt="Cara Gato" class="logo-gato">
-                <h1 class="cyan-brillo">Miau Games</h1>
-            </div>
-            
-            <p class="subtitulo">Seleccioná un juego para armar una sala con tus amigos:</p>
-        </header>
+body { 
+    background-color: #05050a; 
+    /* Ruta asegurada para el fondo */
+    background-image: url('./img/fondo.png'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    padding: 30px 15px; 
+    position: relative;
+    overflow-x: hidden;
+}
 
-        <div class="grilla-juegos">
-            
-            <div class="tarjeta-juego espia-tema">
-                <img src="img/codigoespia.png" alt="Gatito Detective" class="banner-juego">
-                <h2>🕵️‍♂️ CÓDIGO ESPÍA</h2>
-                <p>Un juego de deducción, mentiras y roles secretos. ¿Podrás descubrir al infiltrado antes de que sea tarde?</p>
-                <a href="https://codigo-espia.onrender.com" class="btn-neon btn-cyan">Jugar Ahora</a>
-            </div>
+.contenedor-hub { width: 100%; max-width: 900px; text-align: center; }
 
-            <div class="tarjeta-juego pintor-tema">
-                <img src="img/pintorimpostor.png" alt="Gatitos Pintores" class="banner-juego">
-                <h2>🎨 EL PINTOR IMPOSTOR</h2>
-                <p>Dibujen por turnos una palabra secreta. El impostor no la sabe, ¡así que tendrá que camuflarse con sus trazos!</p>
-                <a href="https://pintor-impostor.onrender.com" class="btn-neon btn-naranja">Jugar Ahora</a>
-            </div>
+/* CABECERA Y LOGOS ESTRICTOS */
+.cabecera-logos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.logo-m {
+    height: 70px !important; /* Forzamos tamaño máximo */
+    width: auto !important;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 10px rgba(255, 120, 0, 0.6));
+}
+.titulo-y-cara {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+.logo-gato {
+    height: 60px !important; /* Forzamos que la cara no se descontrole */
+    width: auto !important;
+}
 
-        </div>
+/* COLORES DEL TÍTULO MICHI GAMES */
+h1 { font-size: 44px; letter-spacing: 2px; }
+.michi-blanco { color: #ffffff; text-shadow: 0 0 15px rgba(255, 255, 255, 0.6); }
+.games-celeste { color: #00d2ff; text-shadow: 0 0 20px #00d2ff, 0 0 10px #00d2ff; }
 
-        <div class="contenedor-adsense">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-3597205269278004"
-                 data-ad-slot="1234567890"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
-    </div>
+.subtitulo { color: #cbd5e1; font-size: 18px; font-weight: 500; }
 
-</body>
-</html>
+/* GRILLA Y TARJETAS */
+.grilla-juegos { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+
+.tarjeta-juego { 
+    background: #0f121d; 
+    padding: 20px; 
+    border-radius: 15px; 
+    width: 100%; 
+    max-width: 400px; 
+    text-align: center; 
+    display: flex; 
+    flex-direction: column; 
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tarjeta-juego:hover { transform: translateY(-5px); }
+
+.espia-tema { border: 2px solid #00d2ff; box-shadow: 0 0 30px rgba(0, 210, 255, 0.3); }
+.espia-tema h2 { color: #00ff87; margin: 15px 0 10px 0; }
+
+.pintor-tema { border: 2px solid #ffaa00; box-shadow: 0 0 30px rgba(255, 170, 0, 0.3); }
+.pintor-tema h2 { color: #ffaa00; margin: 15px 0 10px 0; }
+
+.banner-juego {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #232d42;
+}
+
+.tarjeta-juego p { color: #94a3b8; font-size: 14px; line-height: 1.6; margin-bottom: 25px; flex-grow: 1; }
+
+/* BOTONES NEÓN */
+.btn-neon {
+    display: block;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none; 
+    font-size: 16px;
+    transition: all 0.3s;
+    background: transparent;
+}
+.btn-cyan { color: #00ff87; border: 2px solid #00ff87; box-shadow: inset 0 0 10px rgba(0, 255, 135, 0.2), 0 0 15px rgba(0, 255, 135, 0.2); }
+.btn-cyan:hover { background: #00ff87; color: #0f121d; box-shadow: 0 0 30px rgba(0, 255, 135, 0.8); }
+
+.btn-naranja { color: #ffaa00; border: 2px solid #ffaa00; box-shadow: inset 0 0 10px rgba(255, 170, 0, 0.2), 0 0 15px rgba(255, 170, 0, 0.2); }
+.btn-naranja:hover { background: #ffaa00; color: #0f121d; box-shadow: 0 0 30px rgba(255, 170, 0, 0.8); }
+
+.contenedor-adsense { margin-top: 50px; min-height: 90px; background: rgba(255,255,255,0.02); border-radius: 8px; border: 1px dashed #333; }
