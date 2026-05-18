@@ -1,13 +1,130 @@
-* { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
-body { background-color: #0f111a; color: white; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
-.contenedor-hub { width: 100%; max-width: 800px; text-align: center; }
-h1 { color: #ffaa00; font-size: 28px; margin-bottom: 10px; letter-spacing: 1px; }
-.subtitulo { color: #8a8fbc; margin-bottom: 40px; font-size: 16px; }
-.grilla-juegos { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
-.tarjeta-juego { background: #1a1d2e; border: 2px solid #282c47; padding: 25px; border-radius: 12px; width: 100%; max-width: 360px; text-align: left; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 6px 20px rgba(0,0,0,0.5); transition: transform 0.2s; }
-.tarjeta-juego:hover { transform: translateY(-5px); border-color: #ffaa00; }
-.tarjeta-juego h2 { color: #00ff66; font-size: 20px; margin-bottom: 12px; }
-.tarjeta-juego p { color: #cbd5e1; font-size: 14px; line-height: 1.5; margin-bottom: 20px; }
-.btn-enlace { display: block; text-align: center; background: #ffaa00; color: #0f111a; padding: 12px; border-radius: 6px; font-weight: bold; text-decoration: none; font-size: 16px; transition: background 0.2s; }
-.btn-enlace:hover { background: #e09500; }
-.contenedor-adsense { margin-top: 50px; min-height: 90px; background: rgba(255,255,255,0.03); border-radius: 8px; }
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+body { 
+    background-color: #05050a; /* Fondo ultra oscuro */
+    color: white; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    padding: 30px 15px; 
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Falso fondo de estrellas usando CSS (Se ve más profesional que una imagen de baja calidad) */
+.estrellas {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: 
+        radial-gradient(1px 1px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 40px 70px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 160px 120px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 200px 300px, #ffffff, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 250px 250px;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.contenedor-hub { width: 100%; max-width: 900px; text-align: center; }
+
+/* CABECERA: Logos apilados verticalmente */
+.cabecera-logos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+/* Tu M (orejas) con brillo naranja sutil */
+.logo-m {
+    height: 70px; /* Ajustá este tamaño si es necesario */
+    margin-bottom: 5px;
+    filter: drop-shadow(0 0 10px rgba(255, 120, 0, 0.6));
+}
+/* Título y cara son una fila */
+.titulo-y-cara {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+.logo-gato {
+    height: 60px; /* Tamaño de la carita del gato */
+}
+h1 { font-size: 42px; text-shadow: 0 0 15px rgba(139, 211, 255, 0.5); letter-spacing: 2px; }
+.cyan-brillo { color: #8bd3ff; text-shadow: 0 0 20px #00d2ff, 0 0 10px #00d2ff; }
+
+.subtitulo { color: #cbd5e1; font-size: 18px; font-weight: 500; }
+
+/* GRILLA Y TARJETAS */
+.grilla-juegos { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+
+.tarjeta-juego { 
+    background: #0f121d; 
+    padding: 20px; 
+    border-radius: 15px; 
+    width: 100%; 
+    max-width: 400px; 
+    text-align: center; 
+    display: flex; 
+    flex-direction: column; 
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tarjeta-juego:hover { transform: translateY(-5px); }
+
+/* Tema Cyan (Código Espía) - Borde neón brillante */
+.espia-tema {
+    border: 2px solid #00d2ff;
+    box-shadow: 0 0 30px rgba(0, 210, 255, 0.3);
+}
+.espia-tema h2 { color: #00ff87; margin: 15px 0 10px 0; }
+
+/* Tema Naranja (El Pintor Impostor) - Borde neón brillante */
+.pintor-tema {
+    border: 2px solid #ffaa00;
+    box-shadow: 0 0 30px rgba(255, 170, 0, 0.3);
+}
+.pintor-tema h2 { color: #ffaa00; margin: 15px 0 10px 0; }
+
+/* Imagen rectangular dentro de la tarjeta */
+.banner-juego {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #232d42;
+}
+
+.tarjeta-juego p { color: #94a3b8; font-size: 14px; line-height: 1.6; margin-bottom: 25px; flex-grow: 1; }
+
+/* BOTONES NEÓN CON DOBLE BRILLO */
+.btn-neon {
+    display: block;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s;
+    background: transparent;
+}
+.btn-cyan {
+    color: #00ff87;
+    border: 2px solid #00ff87;
+    box-shadow: inset 0 0 15px rgba(0, 255, 135, 0.2), 0 0 15px rgba(0, 255, 135, 0.2);
+}
+.btn-cyan:hover { background: #00ff87; color: #0f121d; box-shadow: 0 0 30px rgba(0, 255, 135, 0.8); }
+
+.btn-naranja {
+    color: #ffaa00;
+    border: 2px solid #ffaa00;
+    box-shadow: inset 0 0 15px rgba(255, 170, 0, 0.2), 0 0 15px rgba(255, 170, 0, 0.2);
+}
+.btn-naranja:hover { background: #ffaa00; color: #0f121d; box-shadow: 0 0 30px rgba(255, 170, 0, 0.8); }
+
+/* ADSENSE - Con brillo sutil de fondo */
+.contenedor-adsense { margin-top: 50px; min-height: 90px; background: rgba(255,255,255,0.02); border-radius: 8px; border: 1px dashed #333; }
