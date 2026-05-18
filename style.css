@@ -1,0 +1,13 @@
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
+body { background-color: #0f111a; color: white; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
+.contenedor-hub { width: 100%; max-width: 800px; text-align: center; }
+h1 { color: #ffaa00; font-size: 28px; margin-bottom: 10px; letter-spacing: 1px; }
+.subtitulo { color: #8a8fbc; margin-bottom: 40px; font-size: 16px; }
+.grilla-juegos { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+.tarjeta-juego { background: #1a1d2e; border: 2px solid #282c47; padding: 25px; border-radius: 12px; width: 100%; max-width: 360px; text-align: left; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 6px 20px rgba(0,0,0,0.5); transition: transform 0.2s; }
+.tarjeta-juego:hover { transform: translateY(-5px); border-color: #ffaa00; }
+.tarjeta-juego h2 { color: #00ff66; font-size: 20px; margin-bottom: 12px; }
+.tarjeta-juego p { color: #cbd5e1; font-size: 14px; line-height: 1.5; margin-bottom: 20px; }
+.btn-enlace { display: block; text-align: center; background: #ffaa00; color: #0f111a; padding: 12px; border-radius: 6px; font-weight: bold; text-decoration: none; font-size: 16px; transition: background 0.2s; }
+.btn-enlace:hover { background: #e09500; }
+.contenedor-adsense { margin-top: 50px; min-height: 90px; background: rgba(255,255,255,0.03); border-radius: 8px; }
