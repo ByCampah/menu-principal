@@ -1,7 +1,12 @@
+/* Reemplazá el bloque body y eliminá la clase .estrellas vieja */
 * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 
 body { 
-    background-color: #05050a; /* Fondo ultra oscuro */
+    background-color: #05050a; /* Fondo de seguridad oscuro */
+    background-image: url('img/fondo.png'); /* TU NUEVO FONDO PERSONALIZADO */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Hace que el fondo se quede quieto y sea elegante */
     color: white; 
     display: flex; 
     justify-content: center; 
@@ -10,22 +15,6 @@ body {
     padding: 30px 15px; 
     position: relative;
     overflow-x: hidden;
-}
-
-/* Falso fondo de estrellas usando CSS (Se ve más profesional que una imagen de baja calidad) */
-.estrellas {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-image: 
-        radial-gradient(1px 1px at 20px 30px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 40px 70px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 90px 40px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 160px 120px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 200px 300px, #ffffff, rgba(0,0,0,0));
-    background-repeat: repeat;
-    background-size: 250px 250px;
-    z-index: -1;
-    opacity: 0.3;
 }
 
 .contenedor-hub { width: 100%; max-width: 900px; text-align: center; }
@@ -37,13 +26,13 @@ body {
     align-items: center;
     margin-bottom: 40px;
 }
-/* Tu M (orejas) con brillo naranja sutil */
 .logo-m {
-    height: 70px; /* Ajustá este tamaño si es necesario */
-    margin-bottom: 5px;
+    height: 100px; 
+    max-width: 100%; 
+    margin-bottom: 20px;
     filter: drop-shadow(0 0 10px rgba(255, 120, 0, 0.6));
+    align-self: center; 
 }
-/* Título y cara son una fila */
 .titulo-y-cara {
     display: flex;
     align-items: center;
@@ -51,7 +40,7 @@ body {
     margin-bottom: 10px;
 }
 .logo-gato {
-    height: 60px; /* Tamaño de la carita del gato */
+    height: 60px; 
 }
 h1 { font-size: 42px; text-shadow: 0 0 15px rgba(139, 211, 255, 0.5); letter-spacing: 2px; }
 .cyan-brillo { color: #8bd3ff; text-shadow: 0 0 20px #00d2ff, 0 0 10px #00d2ff; }
@@ -75,14 +64,14 @@ h1 { font-size: 42px; text-shadow: 0 0 15px rgba(139, 211, 255, 0.5); letter-spa
 
 .tarjeta-juego:hover { transform: translateY(-5px); }
 
-/* Tema Cyan (Código Espía) - Borde neón brillante */
+/* Tema Cyan (Código Espía) */
 .espia-tema {
     border: 2px solid #00d2ff;
     box-shadow: 0 0 30px rgba(0, 210, 255, 0.3);
 }
 .espia-tema h2 { color: #00ff87; margin: 15px 0 10px 0; }
 
-/* Tema Naranja (El Pintor Impostor) - Borde neón brillante */
+/* Tema Naranja (El Pintor Impostor) */
 .pintor-tema {
     border: 2px solid #ffaa00;
     box-shadow: 0 0 30px rgba(255, 170, 0, 0.3);
@@ -101,30 +90,37 @@ h1 { font-size: 42px; text-shadow: 0 0 15px rgba(139, 211, 255, 0.5); letter-spa
 
 .tarjeta-juego p { color: #94a3b8; font-size: 14px; line-height: 1.6; margin-bottom: 25px; flex-grow: 1; }
 
-/* BOTONES NEÓN CON DOBLE BRILLO */
+/* BOTONES NEÓN */
 .btn-neon {
     display: block;
     padding: 12px;
     border-radius: 8px;
     font-weight: bold;
-    text-decoration: none;
+    text-decoration: none; 
     font-size: 16px;
     transition: all 0.3s;
     background: transparent;
 }
 .btn-cyan {
-    color: #00ff87;
-    border: 2px solid #00ff87;
-    box-shadow: inset 0 0 15px rgba(0, 255, 135, 0.2), 0 0 15px rgba(0, 255, 135, 0.2);
+    color: #00ff87; 
+    border: 2px solid #00ff87; 
+    box-shadow: inset 0 0 10px rgba(0, 255, 135, 0.2), 0 0 15px rgba(0, 255, 135, 0.2);
 }
-.btn-cyan:hover { background: #00ff87; color: #0f121d; box-shadow: 0 0 30px rgba(0, 255, 135, 0.8); }
+.btn-cyan:hover { 
+    background: #00ff87; 
+    color: #0f121d; 
+    box-shadow: 0 0 30px rgba(0, 255, 135, 0.8); 
+}
 
 .btn-naranja {
-    color: #ffaa00;
-    border: 2px solid #ffaa00;
-    box-shadow: inset 0 0 15px rgba(255, 170, 0, 0.2), 0 0 15px rgba(255, 170, 0, 0.2);
+    color: #ffaa00; 
+    border: 2px solid #ffaa00; 
+    box-shadow: inset 0 0 10px rgba(255, 170, 0, 0.2), 0 0 15px rgba(255, 170, 0, 0.2);
 }
-.btn-naranja:hover { background: #ffaa00; color: #0f121d; box-shadow: 0 0 30px rgba(255, 170, 0, 0.8); }
+.btn-naranja:hover { 
+    background: #ffaa00; 
+    color: #0f121d; 
+    box-shadow: 0 0 30px rgba(255, 170, 0, 0.8); 
+}
 
-/* ADSENSE - Con brillo sutil de fondo */
 .contenedor-adsense { margin-top: 50px; min-height: 90px; background: rgba(255,255,255,0.02); border-radius: 8px; border: 1px dashed #333; }
